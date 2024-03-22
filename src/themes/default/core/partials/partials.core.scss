@@ -1,0 +1,7 @@
+@import "./reset/reset.partials.core.scss";
+
+@mixin partials() {
+  /** Partials - Global piece of styles based on theme colors*/
+
+  @include reset-partials();
+}

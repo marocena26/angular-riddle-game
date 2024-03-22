@@ -1,0 +1,8 @@
+@import "./fonts/fonts.core.scss";
+@import "./modules/modules.core.scss";
+@import "./partials/partials.core.scss";
+
+@mixin core() {
+  @include modules();
+  @include partials();
+}

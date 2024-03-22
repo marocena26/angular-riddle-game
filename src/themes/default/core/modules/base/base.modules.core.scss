@@ -1,0 +1,7 @@
+@import "../../../../variables.scss";
+
+@mixin base-modules() {
+  .pointer {
+    cursor: pointer;
+  }
+}

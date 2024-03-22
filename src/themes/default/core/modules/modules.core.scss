@@ -1,0 +1,7 @@
+@import "./primeNG/primeng.modules.core.scss";
+@import "./base//base.modules.core.scss";
+
+@mixin modules() {
+  @include primeng-modules();
+  @include base-modules();
+}

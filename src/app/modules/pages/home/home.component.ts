@@ -5,7 +5,7 @@ export enum Direction {
   North = 'norte',
   South = 'sur',
   East = 'este',
-  West = 'oeste'
+  West = 'oeste',
 }
 
 @Component({
@@ -14,7 +14,6 @@ export enum Direction {
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
-
   Direction = Direction;
 
   playerPosition: Position = { x: 0, y: 0 };
@@ -34,12 +33,11 @@ export class HomeComponent {
     this.updateAllowedDirections();
   }
 
-
   isMoveAllowed: { [key in Direction]: boolean } = {
     [Direction.North]: true,
     [Direction.South]: true,
     [Direction.East]: true,
-    [Direction.West]: true
+    [Direction.West]: true,
   };
 
   movePlayer(direction: Direction): void {
@@ -51,7 +49,6 @@ export class HomeComponent {
     }
 
     this.updateAllowedDirections();
-
   }
 
   private updateAllowedDirections(): void {
@@ -59,10 +56,10 @@ export class HomeComponent {
     const maxX = this.mansion[0].length - 1;
     const maxY = this.mansion.length - 1;
 
-    this.isMoveAllowed[Direction.North] = y > 0;
+    this.isMoveAllowed[Direction.North] = y > 0 && !(y === 1 && x === 0);
     this.isMoveAllowed[Direction.South] = y < maxY;
     this.isMoveAllowed[Direction.East] = x < maxX;
-    this.isMoveAllowed[Direction.West] = x > 0;
+    this.isMoveAllowed[Direction.West] = x > 0 && !(x === 1 && y === 0);
   }
 
   private getNewPosition(direction: Direction): Position {
@@ -84,7 +81,9 @@ export class HomeComponent {
 
   private isValidPosition(position: Position): boolean {
     const { x, y } = position;
-    return x >= 0 && x < this.mansion[0].length && y >= 0 && y < this.mansion.length;
+    return (
+      x >= 0 && x < this.mansion[0].length && y >= 0 && y < this.mansion.length
+    );
   }
 
   getCurrentRoom(): string {

@@ -20,6 +20,6 @@
       <button *ngIf="isMoveAllowed[Direction.East]" (click)="movePlayer(Direction.East)">Este</button>
       <button *ngIf="isMoveAllowed[Direction.West]" (click)="movePlayer(Direction.West)">Oeste</button>
     </div>
-    <q-and-a></q-and-a>
+    <q-and-a *ngIf="getCurrentRoom() !== '🚪'"></q-and-a>
   </div>
 </section>

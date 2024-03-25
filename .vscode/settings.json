@@ -2,6 +2,7 @@
     "conventionalCommits.scopes": [
         "app",
         "footer",
-        "layout"
+        "layout",
+        "q&a"
     ]
 }

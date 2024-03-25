@@ -12,16 +12,18 @@ import { AccordionModule } from 'primeng/accordion';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { FormsModule } from '@angular/forms';
+import { TabViewModule } from 'primeng/tabview';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 
 
 
 @NgModule({
   declarations: [
-    LayoutComponent, HomeComponent, QAndAComponent
+    LayoutComponent, HomeComponent, QAndAComponent, NavBarComponent
   ],
   imports: [
     CommonModule,
-    ModulesRoutingModule, ButtonModule, AccordionModule, CardModule, FormsModule
+    ModulesRoutingModule, ButtonModule, AccordionModule, CardModule, FormsModule,TabViewModule
   ]
 })
 export class ModulesModule { }

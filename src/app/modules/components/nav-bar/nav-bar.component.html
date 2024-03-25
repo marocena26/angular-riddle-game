@@ -1,0 +1,44 @@
+<nav class="nav-bar container-custom">
+  <p-tabView>
+    <p-tabPanel>
+      <ng-template pTemplate="header">
+        <i class="pi pi-desktop mr-2"></i>
+        <span>Introducción</span>
+      </ng-template>
+      <p>
+        ¡Bienvenido a Peek a Boo! En este pequeño juego interactivo de preguntas
+        y respuestas te enccontrarás explorando una mansión abandonada llena de
+        habitaciones. <br /><br />
+        En cada habitación tendrás que resolver un acertijo para poder avanzar a
+        la siguiente. <br /><br />
+        Tu misión es encontrar la habitación de los dulces.
+      </p>
+    </p-tabPanel>
+    <p-tabPanel>
+      <ng-template pTemplate="header">
+        <i class="pi pi-book mr-2"></i>
+        <span>Cómo jugar</span>
+      </ng-template>
+      <ul>
+        <li>
+          Cada habitación propone un enigma aleatorio que deberás responder con
+          texto. Si no lo aciertas no podrás desplazarte.
+        </li>
+        <li>
+          Si resuelves el enigma se te preguntará a donde quieres desplazarte.
+        </li>
+        <li>Sales de la casa si encuentras la habitación de los dulces.</li>
+        <li>
+          Existe un 10% de probabilidad de que en una habitación aparezca un
+          fantasma y tengas que responder dos preguntas para salir de ella.
+        </li>
+      </ul>
+
+      <span
+        >Nota: Las respuestas no deben incluir artículos (el/la/lo), son
+        respuestas simples. Por ejemplo: "¿Qué lenguaje se utiliza comúnmente
+        para el desarrollo de aplicaciones Android? - Kotlin"</span
+      >
+    </p-tabPanel>
+  </p-tabView>
+</nav>

@@ -2,6 +2,7 @@
 <main class="home container-custom">
   <div class="flex flex-column gap-2">
     <span>Te encuentras en: </span>
+    <span>¿Dónde quieres ir?</span>
     <div class="flex gap-3">
       <button>Norte</button>
       <button>Sur</button>
@@ -10,15 +11,27 @@
     </div>
   </div>
 
-  <p-card header="Pregunta nº">
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed
-      consequuntur error repudiandae numquam deserunt quisquam repellat libero
-      asperiores earum nam nobis, culpa ratione quam perferendis esse,
-      cupiditate neque quas!
-    </p>
-    <ng-template pTemplate="footer">
-      <p-button label="Responder" icon="pi pi-check"></p-button>
-    </ng-template>
-  </p-card>
+  <div>
+    <p-card header="Pregunta nº {{ currentIndex + 1 }}">
+      <p>
+        {{ getCurrentQuestion().question }}
+      </p>
+      <ng-template pTemplate="footer">
+        <div>
+          <input
+            type="text"
+            class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary mr-3"
+            placeholder="Ej: Kotlin"
+            [(ngModel)]="userAnswer"
+          />
+          <p-button
+            label="Responder"
+            icon="pi pi-check"
+            (click)="checkAnswer()"
+          ></p-button>
+        </div>
+        <small>{{ responseMessage }}</small>
+      </ng-template>
+    </p-card>
+  </div>
 </main>

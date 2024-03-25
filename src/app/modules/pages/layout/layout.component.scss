@@ -1,0 +1,25 @@
+@import "../../../../themes/variables.scss";
+
+.main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+
+  background-color: $color-tertiary;
+}
+
+h1 {
+  font-size: 56px;
+  color: $color-secondary;
+}
+
+// ====================== REPONSIVE PROPERTIES =================
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 80px;
+  }
+}

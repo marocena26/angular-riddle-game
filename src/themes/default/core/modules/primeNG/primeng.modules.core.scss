@@ -1,7 +1,25 @@
 @import "../../../../variables.scss";
 
 @mixin primeng-modules() {
-
   // ====================== COMPONENT =================
 
+  .p-button {
+    color: #ffffff;
+    background: $button-principal;
+    border: 1px solid $button-principal;
+    padding: 0.75rem 1.25rem;
+    font-size: 1rem;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s,
+      box-shadow 0.2s;
+    border-radius: 6px;
+    font-family: $font-family-custom;
+    @media (min-width: 768px) {
+      font-size: 2rem;
+    }
+  }
+
+  .p-button:not(:disabled):hover {
+    animation: pulse;
+    animation-duration: 1s;
+  }
 }

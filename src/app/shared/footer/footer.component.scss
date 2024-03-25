@@ -1,9 +1,14 @@
 @import "../../../themes/variables.scss";
 
 .footer {
+  width: 100%;
   padding: 24px;
   text-align: center;
   font-size: 12px;
+  position: fixed;
+  bottom: 0;
+
+  background: $color-secondary;
 }
 
 a {

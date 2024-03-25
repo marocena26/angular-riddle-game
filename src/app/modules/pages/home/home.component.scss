@@ -11,6 +11,12 @@
   margin-right: auto;
 }
 
+button:disabled {
+  opacity: 0.5; // Cambiar la opacidad cuando el botón esté deshabilitado
+  cursor: not-allowed; // Cambiar el cursor cuando el botón esté deshabilitado
+  background-color: gray; // Cambiar el color de fondo cuando el botón esté deshabilitado
+}
+
 // ====================== REPONSIVE PROPERTIES =================
 
 @media (min-width: 768px) {

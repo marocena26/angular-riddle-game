@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { QuestionsAndAnswers } from 'src/app/interfaces/questionsAndAnswers';
 
 @Component({
@@ -6,7 +6,18 @@ import { QuestionsAndAnswers } from 'src/app/interfaces/questionsAndAnswers';
   templateUrl: './q-and-a.component.html',
   styleUrls: ['./q-and-a.component.scss'],
 })
-export class QAndAComponent {
+export class QAndAComponent implements OnInit {
+
+  currentQuestionIndex: number = 0;
+  currentQuestion!: QuestionsAndAnswers;
+  userInput: string = '';
+  isCorrect: boolean = false;
+  showError: boolean = false;
+
+  ngOnInit(): void {
+    this.showNextQuestion();
+  }
+
   questions: QuestionsAndAnswers[] = [
     {
       question:
@@ -96,16 +107,6 @@ export class QAndAComponent {
       answers: 'Kotlin',
     },
   ];
-
-  currentQuestionIndex: number = 0;
-  currentQuestion!: QuestionsAndAnswers;
-  userInput: string = '';
-  isCorrect: boolean = false;
-  showError: boolean = false;
-
-  ngOnInit(): void {
-    this.showNextQuestion();
-  }
 
   showNextQuestion(): void {
     this.currentQuestion = this.questions[this.currentQuestionIndex];

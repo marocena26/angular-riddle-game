@@ -1,17 +1,25 @@
 <section class="home container-custom">
   <div>
-    <p-accordion [activeIndex]="0">
+    <p-accordion [activeIndex]="0" >
       <p-accordionTab header="Cómo jugar">
         <p>
           Este es un reto especial por Halloween. * Te encuentras explorando una
           mansión abandonada llena de habitaciones. * En cada habitación tendrás
-          que resolver un acertijo para poder avanzar a la siguiente. * Tu misión
-          es encontrar la habitación de los dulces.
+          que resolver un acertijo para poder avanzar a la siguiente. * Tu
+          misión es encontrar la habitación de los dulces.
         </p>
       </p-accordionTab>
     </p-accordion>
   </div>
   <div>
+    <div class="room">Actualmente te encuentras en: {{ getCurrentRoom() }}</div>
+    <div>
+      <p>¿A dónde quieres ir?</p>
+      <button *ngIf="isMoveAllowed[Direction.North]" (click)="movePlayer(Direction.North)">Norte</button>
+      <button *ngIf="isMoveAllowed[Direction.South]" (click)="movePlayer(Direction.South)">Sur</button>
+      <button *ngIf="isMoveAllowed[Direction.East]" (click)="movePlayer(Direction.East)">Este</button>
+      <button *ngIf="isMoveAllowed[Direction.West]" (click)="movePlayer(Direction.West)">Oeste</button>
+    </div>
     <q-and-a></q-and-a>
   </div>
 </section>

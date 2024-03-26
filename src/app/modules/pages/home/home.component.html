@@ -1,15 +1,16 @@
 <nav-bar></nav-bar>
 <main class="home container-custom">
   <div class="flex flex-column gap-2">
-    <span>Te encuentras en: </span>
+    <span>Te encuentras en: {{ getPlayerEmoji() }}</span>
     <span>¿Dónde quieres ir?</span>
     <div class="flex gap-3">
-      <button>Norte</button>
-      <button>Sur</button>
-      <button>Este</button>
-      <button>Oeste</button>
+      <button [disabled]="!canMove('Norte')" (click)="movePlayer('Norte')">Norte</button>
+      <button [disabled]="!canMove('Sur')" (click)="movePlayer('Sur')">Sur</button>
+      <button [disabled]="!canMove('Este')" (click)="movePlayer('Este')">Este</button>
+      <button [disabled]="!canMove('Oeste')" (click)="movePlayer('Oeste')">Oeste</button>
     </div>
   </div>
+
 
   <div>
     <p-card header="Pregunta nº {{ currentIndex + 1 }}">
@@ -23,6 +24,7 @@
             class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary mr-3"
             placeholder="Ej: Kotlin"
             [(ngModel)]="userAnswer"
+            (keyup.enter)="checkAnswer()"
           />
           <p-button
             label="Responder"
